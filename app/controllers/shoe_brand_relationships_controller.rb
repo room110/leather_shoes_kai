@@ -1,0 +1,2 @@
+class ShoeBrandRelationshipsController < ApplicationController
+end

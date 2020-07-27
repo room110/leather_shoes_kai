@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-xs-3"></div>
+    
+
+    <div class="col-xs-6">
+    
+
+
+      <p class="admin-page-title-genre">タイプ一覧・追加</p>
+
+	  <%= form_for(@type, url: types_path) do |f| %>
+		  <label>タイプ</label>
+		  <%= f.text_field :name %>
+		<%= f.submit '追加',{class: 'btn btn-info'} %>
+	  <% end %>
+	  
+
+
+	  <table class="table table-hover">
+		<thead>
+			<tr class="active">
+				<th>タイプ</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @types.each do |type| %>
+			<tr>
+				<td>
+					<%= type.name %>
+				</td>
+				<td>
+				</td>
+				<td class="text-right">
+					<%= link_to "編集する", edit_type_path(type), {class: 'btn btn-primary'} %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	  </table>
+
+
+</div>
+
+
+<div class="col-xs-3"></div>
+</div>
