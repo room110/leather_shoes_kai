@@ -25,6 +25,17 @@ def update
 end
 
 
+
+def follower
+     @user = User.find(params[:id])
+     @followers = @user.followers
+  end
+
+  def follow
+    @user = User.find(params[:id])
+    @followings = @user.followings
+  end
+
 private
 
 def user_params

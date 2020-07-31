@@ -1,4 +1,4 @@
-  <div class="col-xs-4">
+ <div class="col-xs-4">
     <h1>User info</h1>
       <%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "img/no_image.jpg" %>
     <table class="table">
@@ -21,6 +21,25 @@
     </span>
   <% end %>
 <% end %>
+
+<div class="row">
+        <% unless current_user == user %>
+          <% if current_user.following?(user) %>
+               <%= form_for(current_user.user_relationships.find_by(follow_id: user.id), html: { method: :delete }) do |f| %>
+               <%= hidden_field_tag :follow_id, user.id %>
+               <%= f.submit 'フォロー外す', class:'btn btn-danger btn-block'%>
+               <% end %>
+          <% else %>
+               <%= form_for(current_user.user_relationships.build) do |f| %>
+               <%= hidden_field_tag :follow_id, user.id %>
+               <%= f.submit 'フォローする', class:'btn btn-primary btn-block' %>
+               <% end %>
+          <% end %>
+        <% end %>
+</div>
+
+
+
 
 
 <h1>New shoes</h1>

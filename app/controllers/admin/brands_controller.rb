@@ -1,4 +1,4 @@
-class BrandsController < ApplicationController
+class Admin::BrandsController < ApplicationController
 	def index
 		@brand = Brand.new
 		@brands = Brand.all
@@ -20,7 +20,7 @@ class BrandsController < ApplicationController
 	def update
 		@brand = Brand.find(params[:id])
 		if @brand.update(brand_params)
-		   redirect_to _path
+		   redirect_to admin_brands_path
 		else
 		   redirect_back(fallback_location: root_path)
 		end

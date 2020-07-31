@@ -6,10 +6,10 @@
     
 
 
-      <p class="admin-page-title-genre">タイプ一覧・追加</p>
+      <p class="admin-page-title-genre">ブランド一覧・追加</p>
 
-	  <%= form_for(@type, url: types_path) do |f| %>
-		  <label>タイプ</label>
+	  <%= form_for(@brand, url: admin_brands_path) do |f| %>
+		  <label>ブランド</label>
 		  <%= f.text_field :name %>
 		<%= f.submit '追加',{class: 'btn btn-info'} %>
 	  <% end %>
@@ -19,21 +19,21 @@
 	  <table class="table table-hover">
 		<thead>
 			<tr class="active">
-				<th>タイプ</th>
+				<th>ブランド</th>
 				<th></th>
 				<th></th>
 			</tr>
 		</thead>
 		<tbody>
-			<% @types.each do |type| %>
+			<% @brands.each do |brand| %>
 			<tr>
 				<td>
-					<%= type.name %>
+					<%= brand.name %>
 				</td>
 				<td>
 				</td>
 				<td class="text-right">
-					<%= link_to "編集する", edit_type_path(type), {class: 'btn btn-primary'} %>
+					<%= link_to "編集する", edit_admin_brand_path(brand), {class: 'btn btn-primary'} %>
 				</td>
 			</tr>
 			<% end %>

@@ -30,11 +30,22 @@ class ShoesController < ApplicationController
 		@shoe = Shoe.find(params[:id])
 	end
 
+
+  def update
+    @shoe = Shoe.find(params[:id])
+      if @shoe.update(shoe_params)
+        flash[:notice] = "successfully"
+        redirect_to shoe_path(@shoe.id)
+      else
+        render "edit"
+      end
+  end
+
 	def destroy
 	  @shoe = Shoe.find(params[:id])
       shoe = current_user
-      shoe.destroy
-      redirect_to shoe_path(@shoe.id)
+      @shoe.destroy
+      redirect_to shoes_path
 	end
 
 

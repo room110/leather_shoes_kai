@@ -1,17 +1,33 @@
 Rails.application.routes.draw do
-  get 'inquirys/new'
-  get 'inquirys/create'
-  post 'inquirys/create' => 'inquirys#create'
-  devise_for :admins
+
+  devise_for :admins, :controllers => {
+    :sessions => 'admin/sessions'
+  }
   devise_for :users
 
   root to: 'homes#top'
   get 'about' => 'homes#about'
+  get 'inquirys/new'
+  get 'inquirys/create'
+  post 'inquirys/create' => 'inquirys#create'
+  get 'search' => 'searches#search'
 
-  resources :users
+  namespace :admin do
   resources :brands
   resources :sizes
   resources :types
+  end
+
+  resources :users do
+    member do
+         get :follow
+         get :follower
+    end
+  end
+
+
+  resources :users
+  resources :user_relationships, only: [:create, :destroy]
 
   resources :shoes do
     resource :favorites, only: [:create, :destroy]

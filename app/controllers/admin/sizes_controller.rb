@@ -1,4 +1,4 @@
-class SizesController < ApplicationController
+class Admin::SizesController < ApplicationController
 	def index
 		@size = Size.new
 		@sizes = Size.all
@@ -20,7 +20,7 @@ class SizesController < ApplicationController
 	def update
 		@size = Size.find(params[:id])
 		if @size.update(size_params)
-		   redirect_to _path
+		   redirect_to admin_sizes_path
 		else
 		   redirect_back(fallback_location: root_path)
 		end
