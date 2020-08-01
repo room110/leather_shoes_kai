@@ -1,7 +1,11 @@
 <!DOCTYPE html>
+<html lang="ja">
 <html>
   <head>
-    <title>Shoes</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="stylesheets/skippr.css">
+    <link rel="stylesheet" href="stylesheets/application.scss.erb">
+    <title>LeatherShoes</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <script src="https://kit.fontawesome.com/069a13743e.js" crossorigin="anonymous"></script>
@@ -10,99 +14,29 @@
   </head>
 
   <body>
+    <header class="navbar navbar-fixed-top" style="background-color:#660000;">
+        <%# if request.fullpath.include? "admin"  %>
+          <%#= render 'layouts/admin_header' %>
+        <%# else%>
+          <%= render 'layouts/users_header' %>
+        <%# end %>
+    </header>
 
-     <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-
-        <div id="slidemenu">
-          <span class="nav navbar-nav navbar-left" style="color: white"><font size="4">&nbsp;Leather Shoes</font></span>
-
-        <ul class="nav navbar-nav navbar-right" data-hover="dropdown" data-animations="zoomIn fadeIn fadeInUp fadeIn">
-
-
-    <% if user_signed_in? %>
-            <li class="">
-              <%= form_tag(search_path, method: :get) do %>
-                <%= text_field_tag (:word) %>
-                <%= select_tag 'range' ,options_for_select([
-                  ['---選択してください---', ''],
-                  ['User', '1'],
-                  ['Shoe', '2']]) %>
-                <%= select_tag 'search1', options_for_select([
-                  ["前方一致","forward_match"],
-                  ["後方一致","backward_match"],
-                  ["完全一致","perfect_match"],
-                  ["部分一致","partial_match"]]) %>
-                <%= submit_tag "検索" %>
-              <% end %>
-            </li>
-
-         <li class="">
-          <%= link_to user_path(current_user.id) do %>
-           <span class="glyphicon glyphicon-home" aria-hidden="true">
-           </span>Home
-           <% end %>
-         </li>
-         <li class="">
-          <%= link_to users_path do%>
-           <span class="glyphicon glyphicon-user" aria-hidden="true"></span>Users
-           <% end %>
-         </li>
-         <li class="">
-          <%= link_to shoes_path do %>
-          <span class="glyphicon glyphicon-book" aria-hidden="true"></span>Shoes
-          <% end %>
-         </li>
-         <li class="">
-          <%= link_to destroy_user_session_path, method: :delete do %>
-          <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>Logout
-        <% end %>
-        </li>
-    <% else %>
-         <li class="">
-          <%= link_to root_path do %>
-           <span class="glyphicon glyphicon-home" aria-hidden="true">
-           </span>Home
-           <% end %>
-         </li>
-
-
-　　　　　 <li class="">
-           <%= link_to about_path do %>
-           <span class="glyphicon glyphicon-link" aria-hidden="true"></span>About
-           <% end %>
-         </li>
-
-
-         <li class="">
-          <%= link_to new_user_registration_path do%>
-           <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>sign up
-           <% end %>
-         </li>
-
-
-         <li class="">
-           <%= link_to new_user_session_path do %>
-           <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>login
-           <% end %>
-         </li>
-    <%end%>
-  </ul>
-       </div>
-       </div>
+    <main>
+      <div style="margin-bottom: 100px"></div>
+      <div class="container">
+        <%= yield %>
       </div>
-     </nav>
+    </main>
 
+    <footer class="navbar">
+      <div class="container text-right">
+        <p>©︎2020 LeatherShoes</p>
+      </div>
+    </footer>
 
-
-
-    <%= yield %>
+    <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/skippr.min.js"></script>
+    <script src="javascripts/application.js"></script>
   </body>
 </html>

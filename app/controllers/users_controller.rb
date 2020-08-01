@@ -24,9 +24,14 @@ def update
     end
 end
 
+def new
+  @shoe = Shoe.new
+  @user = User.find(params[:id])
+  @shoes = @user.shoes
+end
 
 
-def follower
+  def follower
      @user = User.find(params[:id])
      @followers = @user.followers
   end
