@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
 
   resources :users
+  get 'users/:id/new' => 'users#new'
   resources :user_relationships, only: [:create, :destroy]
 
   resources :shoes do
