@@ -1,42 +1,35 @@
 <!DOCTYPE html>
-<html lang="ja">
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="stylesheets/skippr.css">
-    <link rel="stylesheet" href="stylesheets/application.scss.erb">
-    <title>LeatherShoes</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <script src="https://kit.fontawesome.com/069a13743e.js" crossorigin="anonymous"></script>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <header class="navbar navbar-fixed-top" style="background-color:#660000;">
-        <%# if request.fullpath.include? "admin"  %>
-          <%#= render 'layouts/admin_header' %>
-        <%# else%>
-          <%= render 'layouts/users_header' %>
-        <%# end %>
-    </header>
-
-    <main>
-      <div style="margin-bottom: 100px"></div>
-      <div class="container">
-        <%= yield %>
-      </div>
-    </main>
-
-    <footer class="navbar">
-      <div class="container text-right">
-        <p>©︎2020 LeatherShoes</p>
-      </div>
-    </footer>
-
-    <script src="javascripts/jquery.min.js"></script>
-    <script src="javascripts/skippr.min.js"></script>
-    <script src="javascripts/application.js"></script>
-  </body>
+  <html lang="ja">
+    <html>
+      <head>
+        <meta charset="UTF-8">
+        <title>LeatherShoes</title>
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
+        <script src="https://kit.fontawesome.com/069a13743e.js" crossorigin="anonymous"></script>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application' %>
+      </head>
+      <body>
+        <main>
+          <%# if request.fullpath.include? "admin"  %>
+            <%#= render 'layouts/admin_header' %>
+          <%# else%>
+            <%= render 'layouts/users_header' %>
+          <%# end %>
+          <div class="container">
+          <%= yield %>
+          </div>
+        </main>
+        <footer class="navbar">
+          <div class="container text-right">
+            <h4>©︎2020 LeatherShoes</h4>
+          </div>
+        </footer>
+          <span id="back">
+            <a href="#">
+              <img tag="/assets/images/img/arrow.png">
+            </a>
+          </span>
+      </body>
 </html>

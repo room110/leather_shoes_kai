@@ -9,20 +9,20 @@ class ShoesController < ApplicationController
         redirect_to shoe_path(@shoe.id)
       else
         render "index"
-	  end
-    end
+	    end
+  end
 
 
 	def show
 	  @shoe = Shoe.find(params[:id])
-      @shoe_new = Shoe.new
-      @user = @shoe.user
-      @shoe_comment = ShoeComment.new
+    @shoe_new = Shoe.new
+    @user = @shoe.user
+    @shoe_comment = ShoeComment.new
 	end
 
 	def index
 	    #kaminariページネーション記述
-        @shoes = Shoe.page(params[:page]).reverse_order
+    @shoes = Shoe.page(params[:page]).reverse_order
 		@shoe = Shoe.new
 	end
 
@@ -49,11 +49,11 @@ class ShoesController < ApplicationController
 	end
 
 
-private
+  private
 
 
-def shoe_params
+  def shoe_params
       params.require(:shoe).permit(:title, :body, :shoe_image, brand_ids: [])
-end
+  end
 
 end
