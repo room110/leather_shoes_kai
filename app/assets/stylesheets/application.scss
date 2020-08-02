@@ -39,6 +39,14 @@ h1{
   background-color: #eee;
 }
 
+@font-face {
+  font-family: 'font-ant';
+  src: font-url('/assets/font-ant.ttf');
+}
+
+body {
+  font-family: font-ant;
+}
 
 /* ---------------------------- */
 /* --- アイコン --- */

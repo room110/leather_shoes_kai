@@ -34,7 +34,9 @@
           </tr>
         </table>
       <% end %>
-
+      
+      <%= link_to "google",user_google_oauth2_omniauth_authorize_path %>
+      
       <%= render "devise/shared/links" %>
       <div class="text-right"><%= link_to "管理者ログインページ", admin_session_path, class: "btn btn-danger" %>
       </div>

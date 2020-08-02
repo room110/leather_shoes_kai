@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   devise_for :admins, :controllers => {
     :sessions => 'admin/sessions'
   }
-  devise_for :users
+  devise_for :users,
+    controllers: {
+      sessions: 'users/sessions',
+      registrations: "users/registrations",
+      omniauth_callbacks: 'users/omniauth_callbacks'
+  }
 
   root to: 'homes#top'
   get 'about' => 'homes#about'
