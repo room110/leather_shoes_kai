@@ -5,7 +5,6 @@ def index
 end
 
 def show
-	@shoe = Shoe.new
   @user = User.find(params[:id])
   @shoes = @user.shoes
 end
