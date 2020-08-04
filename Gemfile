@@ -39,6 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-rails'
 end
 
 group :development do
@@ -66,3 +67,9 @@ gem "refile-mini_magick"
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
 gem 'kaminari','~> 1.2.1'
+#SNS認証gem↓
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem "omniauth-rails_csrf_protection"
+#.env要gem
+gem 'dotenv-rails'

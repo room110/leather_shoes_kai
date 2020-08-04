@@ -49,6 +49,16 @@ class ShoesController < ApplicationController
 	end
 
 
+  def choose
+  end
+
+  def recommend
+  end
+
+  def care
+  end
+
+
   private
 
 
