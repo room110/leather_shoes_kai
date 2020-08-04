@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :admins, :controllers => {
-    :sessions => 'admin/sessions'
+    :sessions => 'admins/sessions'
   }
   devise_for :users,
     controllers: {
@@ -16,8 +16,11 @@ Rails.application.routes.draw do
   get 'inquirys/create'
   post 'inquirys/create' => 'inquirys#create'
   get 'search' => 'searches#search'
+  get 'shoes/choose' => 'shoes#choose'
+  get 'shoes/recommend' => 'shoes#recommend'
+  get 'shoes/care' => 'shoes#care'
 
-  namespace :admin do
+  namespace :admins do
   resources :brands
   resources :sizes
   resources :types

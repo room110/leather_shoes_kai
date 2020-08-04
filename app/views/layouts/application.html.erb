@@ -11,21 +11,55 @@
         <%= javascript_include_tag 'application' %>
       </head>
       <body>
+        <header id="header" class="">
+          <div class="text-center"><h1>Leather Shoes</h1></div>
+          <%#= image_tag "img/leathershoes_logo.png", size: '250x50', alt: "leather_shoes" %>
+        </header>
+        <!-- /header -->
         <main>
-          <%# if request.fullpath.include? "admin"  %>
-            <%#= render 'layouts/admin_header' %>
-          <%# else%>
+          <% if request.fullpath.include? "admin"  %>
+            <%= render 'layouts/admin_header' %>
+          <% else%>
             <%= render 'layouts/users_header' %>
-          <%# end %>
+          <% end %>
           <div class="container">
           <%= yield %>
           </div>
         </main>
-        <footer class="navbar">
-          <div class="container text-right">
-            <h4>©︎2020 LeatherShoes</h4>
+
+        <footer>
+           <div class="container">
+            <div class="row text-left">
+              <br>
+              <div>
+                <%= link_to root_path do %>
+                  <i class="fas fa-house-user">HOME</i>
+                <% end %>
+                <%= link_to root_path do %>
+                  <i class="fas fa-mug-hot">ABOUT</i>
+                <% end %>
+                <%= link_to inquirys_new_path do %>
+                  <i class="fas fa-book-medical">Contsct</i>
+                <% end %>
+              </div>
+              <div>
+                <%= link_to inquirys_new_path do %>
+                  <i class="fas fa-envelope-square">HOW TO</i>
+                <% end %>
+                <%= link_to inquirys_new_path do %>
+                  <i class="fas fa-pen-nib">Knowledge</i>
+                <% end %>
+                <%= link_to inquirys_new_path do %>
+                  <i class="fas fa-child">Recommended</i>
+                <% end %>
+              </div>
+            </div>
+            <div class="row text-center">
+              <h5>©︎2020 LeatherShoes</h5>
+            </div>
           </div>
         </footer>
+
           <span id="back">
             <a href="#">
               <img tag="/assets/images/img/arrow.png">

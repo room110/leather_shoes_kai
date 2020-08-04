@@ -61,7 +61,10 @@ def self.find_for_google(auth)
     user = User.find_by(email: auth.info.email)
 
     if user.nil?
-       user = User.create(name: auth.info.name, email: auth.info.email)
+       user = User.create(name: auth.info.name,
+                          email: auth.info.email,
+                          password: Devise.friendly_token[0,20]
+                          )
     end
     user
 end
@@ -99,17 +102,17 @@ end
     return {user: user}
    end
 
-   def self.find_oauth(auth)
+  def self.find_oauth(auth)
     uid = auth.uid
     provider = auth.provider
     snscredential = SnsCredential.where(uid: uid, provider: provider).first
-    if snscredential.present?
-      user = with_sns_data(auth, snscredential)[:user]
-      sns = snscredential
-    else
-      user = without_sns_data(auth)[:user]
-      sns = without_sns_data(auth)[:sns]
-    end
+      if snscredential.present?
+        user = with_sns_data(auth, snscredential)[:user]
+        sns = snscredential
+      else
+        user = without_sns_data(auth)[:user]
+        sns = without_sns_data(auth)[:sns]
+      end
     return { user: user ,sns: sns}
   end
 
