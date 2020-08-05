@@ -35,7 +35,7 @@
         </tr>
         <tr>
           <th> <h3>LeatherType</h3></th>
-          <th><%= f.collection_select(:type_ids, Type.all, :id, :name)  do |type| %><% end %>
+          <th><%= f.collection_select(:type_ids, Leather.all, :id, :name)  do |type| %><% end %>
           </th>
         </tr>
       </table>

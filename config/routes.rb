@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   resources :brands
   resources :sizes
   resources :types
+  resources :leathers
   end
 
   resources :users do

@@ -4,8 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
           # Omniauthを使用するオプション
-         :omniauthable, omniauth_providers: %i[facebook google_oauth2]
+         :omniauthable, omniauth_providers: %i[google_oauth2]
   
+
+  validates :name, presence: true
+
   has_many :shoes,dependent: :destroy
   has_many :shoe_images,dependent: :destroy
   has_many :shoe_comments, dependent: :destroy
