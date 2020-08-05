@@ -100,5 +100,27 @@ Type.create!( name: "ジョッパーブーツ")
 
 Type.create!( name: "サイドゴアブーツ")
 
+#leather types
+Leather.create!( name: "カーフ")
 
+Leather.create!( name: "キップ")
 
+Leather.create!( name: "ステア")
+
+Leather.create!( name: "スウェード")
+
+Leather.create!( name: "オイルレザー")
+
+Leather.create!( name: "シュリンクレザー")
+
+Leather.create!( name: "コードバン")
+
+Leather.create!( name: "ベロア")
+
+Leather.create!( name: "オーストリッチ")
+
+Leather.create!( name: "クロコダイル")
+
+Leather.create!( name: "エナメル")
+
+Leather.create!( name: "その他")

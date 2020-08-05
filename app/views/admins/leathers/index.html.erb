@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-xs-3"></div>
+    
+
+    <div class="col-xs-6">
+    
+
+
+      <p class="admin-page-title-genre">革　一覧・追加</p>
+
+	  <%= form_for(@leather, url: admins_leathers_path) do |f| %>
+		  <label>革</label>
+		  <%= f.text_field :name %>
+		<%= f.submit '追加',{class: 'btn btn-info'} %>
+	  <% end %>
+	  
+
+
+	  <table class="table table-hover">
+		<thead>
+			<tr class="active">
+				<th>革</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @leathers.each do |leather| %>
+			<tr>
+				<td>
+					<%= leather.name %>
+				</td>
+				<td>
+				</td>
+				<td class="text-right">
+					<%= link_to "編集する", edit_admins_leather_path(leather), {class: 'btn btn-primary'} %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	  </table>
+
+
+</div>
+
+
+<div class="col-xs-3"></div>
+</div>

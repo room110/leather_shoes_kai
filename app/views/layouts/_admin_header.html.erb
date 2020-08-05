@@ -30,21 +30,26 @@
         <li></li>
         <li><h2>MENU</h2></li>
         <li>
+            <%= link_to "Users", admins_types_path %>
+        </li>
+        <li>
             <%= link_to "Brand", admins_brands_path %>
-          </li>
+        </li>
         <li>
             <%= link_to "Size", admins_sizes_path %>
-          </li>
+        </li>
         <li>
-            <%= link_to "ShoeType", admins_types_path %></li>
+            <%= link_to "ShoeType", admins_types_path %>
+        </li>
         <li>
+            <%= link_to "LeatherType", admins_leathers_path %></li>
         <li>
             <%= link_to "Logout", destroy_admin_session_path, method: :delete %></li>
         <li>
             <%= link_to "お問い合わせ", inquirys_new_path %></li>
       </ul>
     </div>
- 
+
     <div id="hm-icon">
       <a class="menu-trigger" href="#">
         <span></span>

@@ -32,7 +32,7 @@ class Users::SessionsController < Devise::SessionsController
 protected
   def configure_permitted_parameters
 			# サインアップ時にストロングパラメータを追加
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
 
 end
