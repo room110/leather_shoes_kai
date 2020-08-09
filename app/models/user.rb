@@ -8,7 +8,7 @@ class User < ApplicationRecord
   
 
   validates :name, presence: true
-
+  has_many :article,dependent: :destroy
   has_many :shoes,dependent: :destroy
   has_many :shoe_images,dependent: :destroy
   has_many :shoe_comments, dependent: :destroy

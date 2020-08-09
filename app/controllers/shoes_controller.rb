@@ -1,15 +1,17 @@
 class ShoesController < ApplicationController
 	def create
 		@shoe = Shoe.new(shoe_params)
-        @shoe.user_id = current_user.id
-        @shoes = Shoe.all
-        @user = current_user
-      if @shoe.save
-        flash[:notice] = "successfully"
-        redirect_to shoe_path(@shoe.id)
-      else
-        render "index"
-	    end
+    @shoe.user_id = current_user.id
+    @shoes = Shoe.all
+    @user = current_user
+    if @shoe.save
+     # shoe_brand = ShoeBrandRelationship.new(shoe_id: @shoe.id, brand_id: params[:shoe][:brand_ids])
+     # shoe_brand.save
+      flash[:notice] = "successfully"
+      redirect_to shoe_path(@shoe.id)
+    else
+      render "users/new"
+	  end
   end
 
 
@@ -49,21 +51,19 @@ class ShoesController < ApplicationController
 	end
 
 
-  def choose
+  def knowledge
   end
 
   def recommend
   end
 
-  def care
-  end
 
 
   private
 
 
   def shoe_params
-      params.require(:shoe).permit(:title, :body, :shoe_image, brand_ids: [])
+      params.require(:shoe).permit(:title, :body, :shoe_image, :brand_id, :size_id, :type_id, :leather_id)
   end
 
 end

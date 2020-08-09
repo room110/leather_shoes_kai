@@ -18,7 +18,12 @@
                 <%= select_tag 'range' ,options_for_select([
                   ['---選択してください---', ''],
                   ['User', '1'],
-                  ['Shoe', '2']]) %>
+                  ['Shoe', '2'],
+                  ['Brand', '3'],
+                  ['Size', '4'],
+                  ['Type', '5'],
+                  ['Leather', '6'],
+                  ['Article', '7']]) %>
                 <%= select_tag 'search1', options_for_select([
                   ["前方一致","forward_match"],
                   ["後方一致","backward_match"],
@@ -74,7 +79,12 @@
                 <%= select_tag 'range' ,options_for_select([
                   ['---選択してください---', ''],
                   ['User', '1'],
-                  ['Shoe', '2']]) %>
+                  ['Shoe', '2'],
+                  ['Brand', '3'],
+                  ['Size', '4'],
+                  ['Type', '5'],
+                  ['Leather', '6'],
+                  ['Article', '7']]) %>
                 <%= select_tag 'search1', options_for_select([
                   ["前方一致","forward_match"],
                   ["後方一致","backward_match"],
@@ -89,6 +99,8 @@
         <li><%= link_to "About", about_path %></li>
         <li><%= link_to "sign up", new_user_registration_path %></li>
         <li><%= link_to "login", new_user_session_path %></li>
+        <li><%= link_to "革靴基礎知識", shoes_knowledge_path %></li>
+        <li><%= link_to "おすすめブランド", shoes_recommend_path %></li>
         <li><%= link_to "お問い合わせ", inquirys_new_path %></li>
       </ul>
      </div>

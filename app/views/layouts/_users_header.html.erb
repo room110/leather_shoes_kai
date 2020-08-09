@@ -19,7 +19,12 @@
                 <%= select_tag 'range' ,options_for_select([
                   ['---選択してください---', ''],
                   ['User', '1'],
-                  ['Shoe', '2']]) %>
+                  ['Shoe', '2'],
+                  ['Brand', '3'],
+                  ['Size', '4'],
+                  ['Type', '5'],
+                  ['Leather', '6'],
+                  ['Article', '7']]) %>
                 <%= select_tag 'search1', options_for_select([
                   ["前方一致","forward_match"],
                   ["後方一致","backward_match"],
@@ -28,20 +33,16 @@
                 <%= submit_tag "検索",class:'btn btn-primary' %>
               <% end %>
         </li>
-        <li></li>
         <li><h2>MENU</h2></li>
-        <li>
-            <%= link_to "Home", user_path(current_user.id) %>
-          </li>
-        <li>
-            <%= link_to "新規投稿", new_user_post_path(current_user.id) %>
-          </li>
-        <li>
-            <%= link_to "Users", users_path %></li>
-        <li>
-            <%= link_to "Shoes", shoes_path %></li>
-        <li>
-            <%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to "Home", user_path(current_user.id) %></li>
+        <li><%= link_to "新規投稿", new_user_post_path(current_user.id) %></li>
+        <li><%= link_to '動画投稿', new_article_post_path(current_user.id) %></li>
+        <li><%= link_to "投稿一覧", shoes_path %></li>
+        <li><%= link_to "動画一覧", articles_path %></li>
+        <li><%= link_to "Users", users_path %></li>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to "革靴基礎知識", shoes_knowledge_path %></li>
+        <li><%= link_to "おすすめブランド", shoes_recommend_path %></li>
         <li>
             <%= link_to "お問い合わせ", inquirys_new_path %></li>
       </ul>
@@ -71,7 +72,12 @@
                 <%= select_tag 'range' ,options_for_select([
                   ['---選択してください---', ''],
                   ['User', '1'],
-                  ['Shoe', '2']]) %>
+                  ['Shoe', '2'],
+                  ['Brand', '3'],
+                  ['Size', '4'],
+                  ['Type', '5'],
+                  ['Leather', '6'],
+                  ['Article', '7']]) %>
                 <%= select_tag 'search1', options_for_select([
                   ["前方一致","forward_match"],
                   ["後方一致","backward_match"],
@@ -80,12 +86,13 @@
                 <%= submit_tag "検索",class:'btn btn-primary' %>
               <% end %>
           </li>
-        <li></li>
         <li><h2>MENU</h2></li>
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "About", about_path %></li>
         <li><%= link_to "sign up", new_user_registration_path %></li>
         <li><%= link_to "login", new_user_session_path %></li>
+        <li><%= link_to "革靴基礎知識", shoes_knowledge_path %></li>
+        <li><%= link_to "おすすめブランド", shoes_recommend_path %></li>
         <li><%= link_to "お問い合わせ", inquirys_new_path %></li>
       </ul>
      </div>

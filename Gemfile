@@ -73,3 +73,5 @@ gem 'omniauth-facebook'
 gem "omniauth-rails_csrf_protection"
 #.env要gem
 gem 'dotenv-rails'
+gem 'carrierwave'
+gem 'streamio-ffmpeg'
