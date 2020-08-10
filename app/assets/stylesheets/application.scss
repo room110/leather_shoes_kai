@@ -50,14 +50,21 @@ header {
     width: 100%;                /* 横幅100%　*/
     height: 85px;              /* 縦幅140px */
 }
+#logo {
+  width: 200px;
+  height: 78px;
+  background-image: url(img/logo.original.png);
+}
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   font-family: font-ant;
-  background: #DBE6F6;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #C5796D, #DBE6F6);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #C5796D, #DBE6F6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #649173;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #DBD5A4, #649173);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #DBD5A4, #649173); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
 }
 
 footer {

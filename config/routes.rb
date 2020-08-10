@@ -20,16 +20,16 @@ Rails.application.routes.draw do
   get 'shoes/recommend' => 'shoes#recommend'
 
   namespace :admins do
-  resources :brands
-  resources :sizes
-  resources :types
-  resources :leathers
+    resources :brands
+    resources :sizes
+    resources :types
+    resources :leathers
   end
 
   resources :users do
     member do
-         get :follow
-         get :follower
+      get :follow
+      get :follower
     end
   end
 
@@ -40,7 +40,6 @@ Rails.application.routes.draw do
 
   resources :shoes do
     resource :favorites, only: [:create, :destroy]
-    resources :shoe_images
     resources :shoe_comments, only: [:create, :destroy]
   end
 

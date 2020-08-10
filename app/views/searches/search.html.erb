@@ -9,7 +9,24 @@
      <th colspan="3"></th>
     </tr>
   </thead>
-  <% if @range == '2' %>
+  <% if @range == '1' %>
+        <thead>
+          <tr>
+            <th>image</th>
+            <th>name</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @user.each do |user| %>
+          <tr>
+            <td><%= attachment_image_tag(user, :profile_image, :fill, 50, 50, fallback: "img/no_image.jpg") %></td>
+            <td><%= user.name%></td>
+            <td><%= link_to "Show", user, class: "user_#{user.id}" %></td>
+          </tr>
+          <% end %>
+        </tbody>
+  <% elsif @range == '2' %>
         <thead>
           <tr>
             <th>image</th>
@@ -32,40 +49,20 @@
           </tr>
           <% end %>
         </tbody>
-  <% elsif @range == '1' %>
-        <thead>
-          <tr>
-            <th>image</th>
-            <th>name</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @user.each do |user| %>
-            <tr>
-              <td><%= attachment_image_tag(user, :profile_image, :fill, 50, 50, fallback: "img/no_image.jpg") %></td>
-            <td><%= user.name%></td>
-            <td><%= link_to "Show", user, class: "user_#{user.id}" %></td>
-            </tr>
-          <% end %>
-        </tbody>
   <% elsif @range == '3' %>
         <thead>
           <tr>
-            <th>image</th>
-            <th>name</th>
+            <th>shoe image</th>
+            <th>title</th>
             <th colspan="3"></th>
           </tr>
         </thead>
-        <%= @shoes.inspect %>
-        <% @shoes.each do |shoe| %>
-        <%= link_to "Show", shoe_path(shoe.id) %>
-        <% end %>
         <tbody>
-          <% @brands.each do |brand| %>
+          <% @shoes.each do |shoe| %>
             <tr>
-              <td><%#= attachment_image_tag(brand.id.shoe, :shoe_image, :fill, 50, 50, fallback: "img/no_image.jpg") %></td>
-            <td><%= brand.name%></td>
+              <td><%= attachment_image_tag(shoe, :shoe_image, :fill, 50, 50, fallback: "img/no_image.jpg") %></td>
+              <td><%= shoe.title%></td>
+              <td><%= link_to "Show", shoe_path(shoe.id) %></td>
             </tr>
           <% end %>
         </tbody>
@@ -78,11 +75,11 @@
           </tr>
         </thead>
         <tbody>
-          <% @sizes.each do |size| %>
+          <% @shoes.each do |shoe| %>
             <tr>
-              <td><%#= attachment_image_tag(brand.id.shoe, :shoe_image, :fill, 50, 50, fallback: "img/no_image.jpg") %></td>
-            <td><%= size.name%></td>
-            <td><%#= link_to "Show", brand.shoes, class: "brand_#{brand.id}" %></td>
+              <td><%= attachment_image_tag(shoe, :shoe_image, :fill, 50, 50, fallback: "img/no_image.jpg") %></td>
+              <td><%= shoe.title%></td>
+              <td><%= link_to "Show", shoe_path(shoe.id) %></td>
             </tr>
           <% end %>
         </tbody>
@@ -95,11 +92,11 @@
           </tr>
         </thead>
         <tbody>
-          <% @types.each do |type| %>
+          <% @shoes.each do |shoe| %>
             <tr>
-              <td><%#= attachment_image_tag(brand.id.shoe, :shoe_image, :fill, 50, 50, fallback: "img/no_image.jpg") %></td>
-            <td><%= type.name%></td>
-            <td><%#= link_to "Show", brand.shoes, class: "brand_#{brand.id}" %></td>
+              <td><%= attachment_image_tag(shoe, :shoe_image, :fill, 50, 50, fallback: "img/no_image.jpg") %></td>
+              <td><%= shoe.title%></td>
+              <td><%= link_to "Show", shoe_path(shoe.id) %></td>
             </tr>
           <% end %>
         </tbody>
@@ -112,11 +109,11 @@
           </tr>
         </thead>
         <tbody>
-          <% @leathers.each do |learher| %>
+          <% @shoes.each do |shoe| %>
             <tr>
-              <td><%#= attachment_image_tag(brand.id.shoe, :shoe_image, :fill, 50, 50, fallback: "img/no_image.jpg") %></td>
-            <td><%= leather.name%></td>
-            <td><%#= link_to "Show", brand.shoes, class: "brand_#{brand.id}" %></td>
+              <td><%= attachment_image_tag(shoe, :shoe_image, :fill, 50, 50, fallback: "img/no_image.jpg") %></td>
+              <td><%= shoe.title%></td>
+              <td><%= link_to "Show", shoe_path(shoe.id) %></td>
             </tr>
           <% end %>
         </tbody>
