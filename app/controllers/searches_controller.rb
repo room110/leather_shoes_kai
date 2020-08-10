@@ -10,8 +10,6 @@ class SearchesController < ApplicationController
     elsif @range == '3'
       @brands = Brand.search(search1,word)
       @shoes = Shoe.where(brand_id: @brands.ids)
-         #@detail = ShoeBrandRelationship.find(params[:id])
-      #@details = ShoeBrandRelationship.where(brand_id:@brand.ids)
     elsif @range == '4'
       @sizes = Size.search(search1,word)
       @shoes = Shoe.where(size_id: @sizes.ids)
@@ -24,7 +22,6 @@ class SearchesController < ApplicationController
     elsif @range == '7'
       @articles = Article.search(search1,word)
     end
-      #byebug
   end
 
 end

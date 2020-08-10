@@ -11,10 +11,89 @@ Admin.create!(
              password: "@admin",
              password_confirmation: "@admin")
 
-#
-Brand.create!( name: "ジョン・ロブ")
+#Userサンプル
+User.create!(
+	         name: "斎藤学"
+             email: "aa11@aa",
+             introduction: "ジョンロブが好きです。",
+             profile_image_id: ""
+             password: "@users",
+             password_confirmation: "@users")
+User.create!(
+	         name: "後藤輝喜さん"
+             email: "bb22@bb",
+             introduction: "エドワードグリーンが好きです。",
+             profile_image_id: ""
+             password: "@users",
+             password_confirmation: "@users")
+User.create!(
+	         name: "鈴木武雄"
+             email: "cc33@aa",
+             introduction: "チャーチが好きです。",
+             profile_image_id: ""
+             password: "@users",
+             password_confirmation: "@users")
+User.create!(
+	         name: "吉澤涼"
+             email: "dd44@aa",
+             introduction: "トリッカーズが好きです。",
+             profile_image_id: ""
+             password: "@users",
+             password_confirmation: "@users")
+User.create!(
+	         name: "大塚佑"
+             email: "ee55@aa",
+             introduction: "ジェイエムウェストンが好きです。",
+             profile_image_id: ""
+             password: "@users",
+             password_confirmation: "@users")
+User.create!(
+	         name: "忍野進"
+             email: "ee66@aa",
+             introduction: "山陽山町が好きです。",
+             profile_image_id: ""
+             password: "@users",
+             password_confirmation: "@users")
+User.create!(
+	         name: "山本重成"
+             email: "ff77@aa",
+             introduction: "パラブーツが好きです。",
+             profile_image_id: ""
+             password: "@users",
+             password_confirmation: "@users")
+User.create!(
+	         name: "街道快適"
+             email: "gg88@aa",
+             introduction: "カルミナが好きです。",
+             profile_image_id: ""
+             password: "@users",
+             password_confirmation: "@users")
+User.create!(
+	         name: "友達多目"
+             email: "hh99@aa",
+             introduction: "オールデンが好きです。",
+             profile_image_id: ""
+             password: "@users",
+             password_confirmation: "@users")
+User.create!(
+	         name: "成田春樹"
+             email: "ii1010@aa",
+             introduction: "アレンエドモンズが好きです。",
+             profile_image_id: ""
+             password: "@users",
+             password_confirmation: "@users")
+User.create!(
+	         name: "一所懸命"
+             email: "jj1111@aa",
+             introduction: "ベルルッティが好きです。",
+             profile_image_id: ""
+             password: "@users",
+             password_confirmation: "@users")
 
-Brand.create!( name: "エドワード・グリーン")
+#ブランド
+Brand.create!( name: "ジョンロブ")
+
+Brand.create!( name: "エドワードグリーン")
 
 Brand.create!( name: "クロケット＆ジョーンズ")
 
@@ -22,15 +101,15 @@ Brand.create!( name: "トリッカーズ")
 
 Brand.create!( name: "チャーチ")
 
-Brand.create!( name: "ステファノ・ベーメル")
+Brand.create!( name: "ステファノベーメル")
 
 Brand.create!( name: "サントーニ")
 
-Brand.create!( name: "シルヴァノ・ラッタンツィ")
+Brand.create!( name: "シルヴァノラッタンツィ")
 
-Brand.create!( name: "エンツォ・ボナフェ")
+Brand.create!( name: "エンツォボナフェ")
 
-Brand.create!( name: "ジェイエム・ウェストン")
+Brand.create!( name: "ジェイエムウェストン")
 
 Brand.create!( name: "ベルルッティ")
 
@@ -38,11 +117,11 @@ Brand.create!( name: "オールデン")
 
 Brand.create!( name: "パラブーツ")
 
-Brand.create!( name: "アレン・エドモンズ")
+Brand.create!( name: "アレンエドモンズ")
 
 Brand.create!( name: "カルミナ")
 
-Brand.create!( name: "シェットランド・フォックス")
+Brand.create!( name: "シェットランドフォックス")
 
 Brand.create!( name: "山陽山長")
 
