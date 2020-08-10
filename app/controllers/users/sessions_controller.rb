@@ -1,5 +1,5 @@
 class Users::SessionsController < Devise::SessionsController
-
+before_action :configure_permitted_parameters, if: :devise_controller?
   def new
     self.resource = resource_class.new(sign_in_params)
     clean_up_passwords(resource)

@@ -5,6 +5,7 @@
     <div class="col-xs-1"></div>
     <div class="col-xs-5">
       <%= form_for(@shoe) do |f| %>
+      <%= render "devise/shared/error_messages", resource: @shoe %>
         <h3>Title</h3>
           <%= f.text_field :title, class:"col-xs-12"%>
         <h3>Opinion</h3>
@@ -20,22 +21,22 @@
       <table class="table">
         <tr>
           <th><h3>Brand</h3></th>
-          <th><%= f.collection_select(:brand_ids, Brand.all, :id, :name) do |brand| %><% end %>
+          <th><%= f.collection_select(:brand_id, Brand.all, :id, :name) do |brand| %><% end %>
           </th>
         </tr>
         <tr>
           <th><h3>Size</h3></th>
-          <th><%= f.collection_select(:size_ids, Size.all, :id, :name)  do |size| %><% end %>
+          <th><%= f.collection_select(:size_id, Size.all, :id, :name)  do |size| %><% end %>
           </th>
         </tr>
         <tr>
           <th> <h3>ShoesType</h3></th>
-          <th><%= f.collection_select(:type_ids, Type.all, :id, :name)  do |type| %><% end %>
+          <th><%= f.collection_select(:type_id, Type.all, :id, :name)  do |type| %><% end %>
           </th>
         </tr>
         <tr>
           <th> <h3>LeatherType</h3></th>
-          <th><%= f.collection_select(:type_ids, Leather.all, :id, :name)  do |type| %><% end %>
+          <th><%= f.collection_select(:leather_id, Leather.all, :id, :name)  do |leather| %><% end %>
           </th>
         </tr>
       </table>

@@ -16,9 +16,8 @@ Rails.application.routes.draw do
   get 'inquirys/create'
   post 'inquirys/create' => 'inquirys#create'
   get 'search' => 'searches#search'
-  get 'shoes/choose' => 'shoes#choose'
+  get 'shoes/knowledge' => 'shoes#knowledge'
   get 'shoes/recommend' => 'shoes#recommend'
-  get 'shoes/care' => 'shoes#care'
 
   namespace :admins do
   resources :brands
@@ -45,4 +44,6 @@ Rails.application.routes.draw do
     resources :shoe_comments, only: [:create, :destroy]
   end
 
+  resources :articles
+  get 'articles/:id/new' => 'articles#new',as: 'new_article_post'
 end
