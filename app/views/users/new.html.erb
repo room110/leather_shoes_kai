@@ -1,7 +1,6 @@
 <div class="row">
     <h2 class="text-center">New shoes</h2>
       <br>
-      <br>
     <div class="col-xs-1"></div>
     <div class="col-xs-5">
       <%= form_for(@shoe) do |f| %>
@@ -13,7 +12,6 @@
         <h3>ShoesImage</h3>
           <%= f.attachment_field :shoe_image, class:"col-xs-12"%>
     </div>
-
     <div class="col-xs-5">
       <h3 align="text-center">Shoes details</h3>
       <br>
@@ -41,12 +39,11 @@
         </tr>
       </table>
    </div>
-
-
-  <h2 class="text-center">
-      <%= f.submit 'Create shoes', class:"btn btn-primary" %>
-      <% end %>
-  </h2>
-  <div class="col-xs-1"></div>
+   <h2 class="text-center">
+     <%= f.submit 'Create shoes', class:"btn btn-primary" %>
+     <% end %>
+   </h2>
+   <div class="col-xs-1"></div>
+</div>
 
 

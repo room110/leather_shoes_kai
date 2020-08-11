@@ -1,23 +1,20 @@
 <div class="row">
   <div class="col-xs-3"></div>
-
   <div class="col-xs-6">
     <h1>User Edit</h1>
-  <%= form_for(@user) do |f| %>
-    <% if @user.errors.any? %>
-      <table>
-	      <font color="red">
-          <p>2 errors prohibited this book from being saved:</p>
-            <ul>
-              <li>Name can't be blank</li>
-              <li>Introduction can't be blank</li>
-            </ul>
-        </font>
-      </table>
-    <% end %>
-
-
-    <table class="table">
+    <%= form_for(@user) do |f| %>
+      <% if @user.errors.any? %>
+        <table>
+	        <font color="red">
+            <p>2 errors prohibited this book from being saved:</p>
+              <ul>
+                <li>Name can't be blank</li>
+                <li>Introduction can't be blank</li>
+              </ul>
+          </font>
+        </table>
+      <% end %>
+      <table class="table">
         <tr>
           <td><h4>Name</h4></td>
           <td><%= f.text_field :name %></td>
@@ -30,12 +27,12 @@
           <td><h4>Introduction</h4></td>
           <td><%= f.text_area :introduction %></td>
         </tr>
-    </table>
+      </table>
         <div class="text-right">
           <%= f.submit '編集内容を保存する', class: "btn btn-success"%>
         </div>
         <%= link_to "Back", :back %>
-  <% end %>
+    <% end %>
   </div>
-<div class="col-xs-3"></div>
+  <div class="col-xs-3"></div>
 </div>

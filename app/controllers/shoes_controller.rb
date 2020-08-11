@@ -1,4 +1,5 @@
 class ShoesController < ApplicationController
+  before_action :authenticate_user!
 	def create
 		@shoe = Shoe.new(shoe_params)
     @shoe.user_id = current_user.id
@@ -23,9 +24,9 @@ class ShoesController < ApplicationController
 	end
 
 	def index
-	    #kaminariページネーション記述
+	  #kaminariページネーション記述
     @shoes = Shoe.page(params[:page]).reverse_order
-		@shoe = Shoe.new
+		#@shoe = Shoe.find(params[:id])
 	end
 
 	def edit
@@ -45,9 +46,9 @@ class ShoesController < ApplicationController
 
 	def destroy
 	  @shoe = Shoe.find(params[:id])
-      shoe = current_user
-      @shoe.destroy
-      redirect_to shoes_path
+    shoe = current_user
+    @shoe.destroy
+    redirect_to shoes_path
 	end
 
 
@@ -63,7 +64,7 @@ class ShoesController < ApplicationController
 
 
   def shoe_params
-      params.require(:shoe).permit(:title, :body, :shoe_image, :brand_id, :size_id, :type_id, :leather_id)
+    params.require(:shoe).permit(:title, :body, :shoe_image, :brand_id, :size_id, :type_id, :leather_id)
   end
 
 end

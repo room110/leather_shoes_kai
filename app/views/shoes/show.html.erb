@@ -1,67 +1,69 @@
-<div class="container">
-  <div class="row">
-     <div class="col-xs-12">
-  <h2>Shoes detail</h2>
-
-  <table class="table table-hover table-inverse">
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Shoes detail</h2>
+      <table class="table">
         <tr>
           <th><%= link_to user_path(@user.id) do %>
-            <%= attachment_image_tag @shoe.user, :profile_image, :fill, 30, 30, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "img/no_image.jpg" %><br><%= @user.name %><% end %>
+            <%= attachment_image_tag @shoe.user, :profile_image,size: "200x200", format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "img/no_image.jpg" %><h2><%= @user.name %></h2><% end %>
+            <h2>
+              <br>
+              <% if @shoe.favorited_by?(current_user) %>
+                <%= link_to shoe_favorites_path(@shoe), method: :delete do %>
+                  <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+                  <%= @shoe.favorites.count %>いいね
+                <% end %>
+              <% else %>
+                <%= link_to shoe_favorites_path(@shoe), method: :post do %>
+                  <i class="fa fa-heart-o" aria-hidden="true"></i>
+                  <%= @shoe.favorites.count %>いいね
+                <% end %>
+              <% end %>
+            </h2>
+            <h2>
+              <br>
+              <% if @user.id == current_user.id %>
+              <%= link_to "Edit", edit_shoe_path(@shoe.id) %><% end %>
+            </h2>
+            <!--「いいね」に、自分（ログインしているユーザ）が含まれているかをfavorited_by?メソッドで判定-->
+            <h2>
+              <br>
+              <% if @user.id == current_user.id %>
+              <%= link_to "Destroy", shoe_path(@shoe.id), method: :delete, "data-confirm" => "本当に削除しますか？" %><% end %></h2>
           </th>
-          <th></th>
-          <th></th>
-          <th align="left"><%= @shoe.title %></th>
-          <th></th>
-          <th align="left"><%= @shoe.body %></th>
-          <th></th>
-          <th align="left"><%= attachment_image_tag(@shoe, :shoe_image,fallback: "img/no_image.jpg",size:"200x200") %></th>
-          <th><% if @user.id == current_user.id %>
-          <%= link_to "Edit", edit_shoe_path(@shoe.id) %><% end %></th>
-          <!--「いいね」に、自分（ログインしているユーザ）が含まれているかをfavorited_by?メソッドで判定-->
-          <th><% if @user.id == current_user.id %>
-          <%= link_to "Destroy", shoe_path(@shoe.id), method: :delete, "data-confirm" => "本当に削除しますか？" %><% end %></th>
           <th>
-            <% if @shoe.favorited_by?(current_user) %>
-                <li>
-                   <%= link_to shoe_favorites_path(@shoe), method: :delete do %>
-                   <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
-                   <%= @shoe.favorites.count %> いいね
-                   <% end %>
-                </li>
-            <% else %>
-                <li>
-                   <%= link_to shoe_favorites_path(@shoe), method: :post do %>
-                   <i class="fa fa-heart-o" aria-hidden="true"></i>
-                   <%= @shoe.favorites.count %> いいね
-                   <% end %>
-                </li>
-            <% end %>
+            <h2 class="text-center"><%= @shoe.title %></h2>
+            <%= attachment_image_tag(@shoe, :shoe_image,fallback: "img/no_image.jpg",size:"700x600") %>
+            <h3><%= @shoe.body %></h3>
           </th>
         </tr>
+      </table>
+  </div>
+<div class="row">
+  <div class="col-xs-3"></div>
+  <div class="col-xs-6">
         <% @shoe.shoe_comments.each do |shoe_comment| %>
-        <tr>
-          <th><%= link_to user_path(@user.id) do %>
-            <%= attachment_image_tag shoe_comment.user, :profile_image, :fill, 30, 30, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "img/no_image.jpg" %><br><%= shoe_comment.user.name %><% end %>
-          </th>
-
-          <th><%= shoe_comment.comment %></th>
-
-          <th><% if shoe_comment.user == current_user %>
+        <table class="table">
+          <tr>
+            <th><%= link_to user_path(@user.id) do %>
+              <%= attachment_image_tag shoe_comment.user, :profile_image, :fill, 30, 30, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "img/no_image.jpg" %><br><%= shoe_comment.user.name %><% end %>
+            </th>
+            <th><%= shoe_comment.comment %></th>
+            <th>
+              <% if shoe_comment.user == current_user %>
                 <div>
-                    <%= link_to "削除", shoe_shoe_comment_path(shoe_comment.shoe, shoe_comment), method: :delete, class: "btn btn-danger pull-right" %>
+                  <%= link_to "削除", shoe_shoe_comment_path(shoe_comment.shoe, shoe_comment), method: :delete, class: "btn btn-danger pull-right" %>
                 </div>
               <% end %>
-          </th>
-        </tr>
+            </th>
+          </tr>
+        </table>
         <% end %>
-  </table>
-  <div>
-
     <%= form_for [@shoe, @shoe_comment] do |f| %>
       <%= f.text_area :comment, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
-      <%= f.submit "送信", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
+      <h2 class="text-right">
+        <%= f.submit "送信", class:"btn btn-primary" %>
+      </h2>
     <% end %>
   </div>
-</div>
-</div>
+<div class="col-xs-3"></div>
 </div>
