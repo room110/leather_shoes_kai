@@ -16,11 +16,9 @@ class SearchesController < ApplicationController
     elsif @range == '5'
       @types = Type.search(search1,word)
       @shoes = Shoe.where(type_id: @types.ids)
-    elsif @range == '6'
+    else @range == '6'
       @leathers = Leather.search(search1,word)
       @shoes = Shoe.where(leather_id: @leathers.ids)
-    elsif @range == '7'
-      @articles = Article.search(search1,word)
     end
   end
 

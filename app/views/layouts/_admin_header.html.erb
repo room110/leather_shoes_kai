@@ -2,47 +2,25 @@
   <% if admin_signed_in? %>
      <div id="sp-menu">
       <ul>
-        <li><h2>Search</h2></li>
-        <li>
-            <%= form_tag(search_path, method: :get) do %>
-              <%= text_field_tag (:word) %>
-              <%= select_tag 'range' ,options_for_select([
-                ['---選択してください---', ''],
-                ['User', '1'],
-                ['Shoe', '2'],
-                ['Brand', '3'],
-                ['Size', '4'],
-                ['Type', '5'],
-                ['Leather', '6'],
-                ['Article', '7']]) %>
-              <%= select_tag 'search1', options_for_select([
-                ["前方一致","forward_match"],
-                ["後方一致","backward_match"],
-                ["完全一致","perfect_match"],
-                ["部分一致","partial_match"]]) %>
-              <%= submit_tag "検索",class:'btn btn-primary' %>
-            <% end %>
-        </li>
+        <br>
+        <br>
         <li></li>
         <li><h2>MENU</h2></li>
         <li>
-          <%= link_to "Users", admins_types_path %>
+          <h4><%= link_to "Brand", admins_brands_path %></h4>
         </li>
         <li>
-          <%= link_to "Brand", admins_brands_path %>
+          <h4><%= link_to "Size", admins_sizes_path %></h4>
         </li>
         <li>
-          <%= link_to "Size", admins_sizes_path %>
+          <h4><%= link_to "ShoeType", admins_types_path %></h4>
         </li>
         <li>
-          <%= link_to "ShoeType", admins_types_path %>
-        </li>
+          <h4><%= link_to "LeatherType", admins_leathers_path %></h4></li>
         <li>
-          <%= link_to "LeatherType", admins_leathers_path %></li>
+          <h4><%= link_to "Logout", destroy_admin_session_path, method: :delete %></h4></li>
         <li>
-          <%= link_to "Logout", destroy_admin_session_path, method: :delete %></li>
-        <li>
-          <%= link_to "お問い合わせ", inquirys_new_path %></li>
+          <h4><%= link_to "お問い合わせ", inquirys_new_path %></h4></li>
       </ul>
     </div>
     <div id="hm-icon">
@@ -55,37 +33,16 @@
   <% else %>
       <span style= "color: white;">ようこそ、ゲストさん！</span>
       <div id="sp-menu">
+        <br>
+        <br>
         <ul>
-          <li><h2>Search</h2></li>
-          <li>
-            <%= form_tag(search_path, method: :get) do %>
-              <%= text_field_tag (:word) %>
-              <%= select_tag 'range' ,options_for_select([
-                ['---選択してください---', ''],
-                ['User', '1'],
-                ['Shoe', '2'],
-                ['Brand', '3'],
-                ['Size', '4'],
-                ['Type', '5'],
-                ['Leather', '6'],
-                ['Article', '7']]) %>
-              <%= select_tag 'search1', options_for_select([
-                ["前方一致","forward_match"],
-                ["後方一致","backward_match"],
-                ["完全一致","perfect_match"],
-                ["部分一致","partial_match"]]) %>
-              <%= submit_tag "検索",class:'btn btn-primary' %>
-            <% end %>
-          </li>
           <li></li>
           <li><h2>MENU</h2></li>
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "About", about_path %></li>
-          <li><%= link_to "sign up", new_user_registration_path %></li>
-          <li><%= link_to "login", new_user_session_path %></li>
-          <li><%= link_to "革靴基礎知識", shoes_knowledge_path %></li>
-          <li><%= link_to "おすすめブランド", shoes_recommend_path %></li>
-          <li><%= link_to "お問い合わせ", inquirys_new_path %></li>
+          <li><h4><%= link_to "Home", root_path %></h4></li>
+          <li><h4><%= link_to "About", about_path %></h4></li>
+          <li><h4><%= link_to "sign up", new_user_registration_path %></h4></li>
+          <li><h4><%= link_to "login", new_user_session_path %></h4></li>
+          <li><h4><%= link_to "お問い合わせ", inquirys_new_path %></h4></li>
         </ul>
       </div>
     <div id="hm-icon">

@@ -116,22 +116,5 @@
             </tr>
           <% end %>
         </tbody>
-  <% else %>
-        <thead>
-          <tr>
-            <th>image</th>
-            <th>name</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @articles.each do |article| %>
-            <tr>
-              <td><%#= attachment_image_tag(brand.id.shoe, :shoe_image, :fill, 50, 50, fallback: "img/no_image.jpg") %></td>
-            <td><%= article.name%></td>
-            <td><%#= link_to "Show", brand.shoes, class: "brand_#{brand.id}" %></td>
-            </tr>
-          <% end %>
-        </tbody>
   <% end %>
  </table>
