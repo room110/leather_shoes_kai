@@ -11,7 +11,9 @@
     </head>
     <body>
       <header id="header" class="">
-        <div id="logo" class="text-center"></div>
+        <%= link_to root_path do %>
+          <div id="logo" class="text-center"></div>
+        <% end %>
       </header>
       <!-- /header -->
       <main>
@@ -39,24 +41,11 @@
                 <i class="fas fa-book-medical">Contsct</i>
               <% end %>
             </div>
-            <div>
-              <%= link_to shoes_knowledge_path do %>
-                <i class="fas fa-pen-nib">Knowledge</i>
-              <% end %>
-              <%= link_to shoes_recommend_path do %>
-                <i class="fas fa-child">Recommended</i>
-              <% end %>
-            </div>
           </div>
           <div class="row text-center">
             <h5>©︎2020 LeatherShoes</h5>
           </div>
         </div>
       </footer>
-      <span id="back">
-        <a href="#">
-          <img tag="/assets/images/img/arrow.png">
-        </a>
-      </span>
     </body>
   </html>

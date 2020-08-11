@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   get 'inquirys/create'
   post 'inquirys/create' => 'inquirys#create'
   get 'search' => 'searches#search'
-  get 'shoes/knowledge' => 'shoes#knowledge'
   get 'shoes/recommend' => 'shoes#recommend'
 
   namespace :admins do

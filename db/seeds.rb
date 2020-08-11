@@ -6,87 +6,87 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Admin.create!(
-	         name: "admin"
-             email: "shoes@admin",
+	         name: "admin",
+             email: "admin@admin",
              password: "@admin",
              password_confirmation: "@admin")
 
 #Userサンプル
 User.create!(
-	         name: "斎藤学"
+	         name: "斎藤学",
              email: "aa11@aa",
              introduction: "ジョンロブが好きです。",
-             profile_image_id: ""
+             profile_image_id: "",
              password: "@users",
              password_confirmation: "@users")
 User.create!(
-	         name: "後藤輝喜さん"
+	         name: "後藤輝喜さん",
              email: "bb22@bb",
              introduction: "エドワードグリーンが好きです。",
-             profile_image_id: ""
+             profile_image_id: "",
              password: "@users",
              password_confirmation: "@users")
 User.create!(
-	         name: "鈴木武雄"
+	         name: "鈴木武雄",
              email: "cc33@aa",
              introduction: "チャーチが好きです。",
-             profile_image_id: ""
+             profile_image_id: "",
              password: "@users",
              password_confirmation: "@users")
 User.create!(
-	         name: "吉澤涼"
+	         name: "吉澤涼",
              email: "dd44@aa",
              introduction: "トリッカーズが好きです。",
-             profile_image_id: ""
+             profile_image_id: "",
              password: "@users",
              password_confirmation: "@users")
 User.create!(
-	         name: "大塚佑"
+	         name: "大塚佑",
              email: "ee55@aa",
              introduction: "ジェイエムウェストンが好きです。",
-             profile_image_id: ""
+             profile_image_id: "",
              password: "@users",
              password_confirmation: "@users")
 User.create!(
-	         name: "忍野進"
+	         name: "忍野進",
              email: "ee66@aa",
              introduction: "山陽山町が好きです。",
-             profile_image_id: ""
+             profile_image_id: "",
              password: "@users",
              password_confirmation: "@users")
 User.create!(
-	         name: "山本重成"
+	         name: "山本重成",
              email: "ff77@aa",
              introduction: "パラブーツが好きです。",
-             profile_image_id: ""
+             profile_image_id: "",
              password: "@users",
              password_confirmation: "@users")
 User.create!(
-	         name: "街道快適"
+	         name: "街道快適",
              email: "gg88@aa",
              introduction: "カルミナが好きです。",
-             profile_image_id: ""
+             profile_image_id: "",
              password: "@users",
              password_confirmation: "@users")
 User.create!(
-	         name: "友達多目"
+	         name: "友達多目",
              email: "hh99@aa",
              introduction: "オールデンが好きです。",
-             profile_image_id: ""
+             profile_image_id: "",
              password: "@users",
              password_confirmation: "@users")
 User.create!(
-	         name: "成田春樹"
+	         name: "成田春樹",
              email: "ii1010@aa",
              introduction: "アレンエドモンズが好きです。",
-             profile_image_id: ""
+             profile_image_id: "",
              password: "@users",
              password_confirmation: "@users")
 User.create!(
-	         name: "一所懸命"
+	         name: "一所懸命",
              email: "jj1111@aa",
              introduction: "ベルルッティが好きです。",
-             profile_image_id: ""
+             profile_image_id: "",
              password: "@users",
              password_confirmation: "@users")
 

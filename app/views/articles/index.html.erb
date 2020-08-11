@@ -1,34 +1,42 @@
 <div class="row">
-<div class="col-xs-2"></div>
-  <div class="col-xs-8">
+<div class="col-xs-3"></div>
+  <div class="col-xs-6">
     <h1>動画一覧</h1>
       <table class="table">
           <tr>
-            <td>動画ID</td>
-            <td>image</td>
-            <td></td>
-            <td>name</td>
+            <td>User</td>
             <td></td>
             <td>動画タイトル</td>
             <td></td>
-            <td>動画</td>
+            <td>動画詳細</td>
             <td></td>
             <td></td>
           </tr>
           <tr>
             <% @articles.each do |article| %>
-            <td><%= article.id %></td>
-            <td>かお</td>
-            <td></td>
-            <td>名前</td>
+            <td>
+              <%= link_to user_path(article.user.id) do %>
+              <%= attachment_image_tag article.user, :profile_image, size: "80x80", format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "img/no_image.jpg" %>
+              <%= article.user.name %>
+              <% end %>
+            </td>
             <td></td>
             <td><%= article.title %></td>
+            <td></td>
             <td><%= link_to 'Show', article %></td>
-            <td><%= link_to 'Edit', edit_article_path(article) %></td>
-            <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td>
+              <% if article.user.id == current_user.id %>
+                <%= link_to 'Edit', edit_article_path(article) %>
+              <% end %>
+            </td>
+            <td>
+              <% if article.user.id == current_user.id %>
+                <%= link_to 'Destroy', article, method: :delete, data: { confirm: '本当に削除しますか?' } %>
+              <% end %>
+            </td>
             </tr>
             <% end %>
       </table>
   </div>
-<div class="col-xs-2"></div>
+<div class="col-xs-3"></div>
 </div>

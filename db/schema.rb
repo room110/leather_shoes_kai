@@ -60,48 +60,11 @@ ActiveRecord::Schema.define(version: 2020_08_09_060408) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "shoe_brand_relationships", force: :cascade do |t|
-    t.integer "shoe_id"
-    t.integer "brand_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "shoe_comments", force: :cascade do |t|
     t.text "comment"
     t.integer "user_id"
     t.integer "shoe_id"
     t.integer "shoe_image_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "shoe_images", force: :cascade do |t|
-    t.text "shoe_name"
-    t.string "image_id"
-    t.text "caption"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "shoe_leather_relationships", force: :cascade do |t|
-    t.integer "shoe_id"
-    t.integer "leather_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "shoe_size_relationships", force: :cascade do |t|
-    t.integer "shoe_id"
-    t.integer "size_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "shoe_type_relationships", force: :cascade do |t|
-    t.integer "shoe_id"
-    t.integer "type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
