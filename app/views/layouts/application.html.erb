@@ -1,65 +1,62 @@
 <!DOCTYPE html>
   <html lang="ja">
-    <html>
-      <head>
-        <meta charset="UTF-8">
-        <title>LeatherShoes</title>
-        <%= csrf_meta_tags %>
-        <%= csp_meta_tag %>
-        <script src="https://kit.fontawesome.com/069a13743e.js" crossorigin="anonymous"></script>
-        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <%= javascript_include_tag 'application' %>
-      </head>
-      <body>
-        <header id="header" class="">
-              <div id="logo" class="text-center"></div>
-        </header>
-        <!-- /header -->
-        <main>
-          <% if request.fullpath.include? "admin"  %>
+    <head>
+      <meta charset="UTF-8">
+      <title>LeatherShoes</title>
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
+      <script src="https://kit.fontawesome.com/069a13743e.js" crossorigin="anonymous"></script>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application' %>
+    </head>
+    <body>
+      <header id="header" class="">
+        <div id="logo" class="text-center"></div>
+      </header>
+      <!-- /header -->
+      <main>
+        <% if request.fullpath.include? "admin"  %>
             <%= render 'layouts/admin_header' %>
-          <% else%>
+        <% else%>
             <%= render 'layouts/users_header' %>
-          <% end %>
-          <div class="container">
+        <% end %>
+        <div class="container">
           <%= yield %>
-          </div>
-        </main>
-
-        <footer>
-           <div class="container">
-            <div class="row text-left">
-              <br>
-              <div>
-                <%= link_to root_path do %>
-                  <i class="fas fa-house-user">HOME</i>
-                <% end %>
-                <%= link_to about_path do %>
-                  <i class="fas fa-mug-hot">ABOUT</i>
-                <% end %>
-                <%= link_to inquirys_new_path do %>
-                  <i class="fas fa-book-medical">Contsct</i>
-                <% end %>
-              </div>
-              <div>
-                <%= link_to shoes_knowledge_path do %>
-                  <i class="fas fa-pen-nib">Knowledge</i>
-                <% end %>
-                <%= link_to shoes_recommend_path do %>
-                  <i class="fas fa-child">Recommended</i>
-                <% end %>
-              </div>
+        </div>
+      </main>
+      <footer>
+        <div class="container">
+          <div class="row text-left">
+          <br>
+            <div>
+              <%= link_to root_path do %>
+                <i class="fas fa-house-user">HOME</i>
+              <% end %>
+              <%= link_to about_path do %>
+                <i class="fas fa-mug-hot">ABOUT</i>
+              <% end %>
+              <%= link_to inquirys_new_path do %>
+                <i class="fas fa-book-medical">Contsct</i>
+              <% end %>
             </div>
-            <div class="row text-center">
-              <h5>©︎2020 LeatherShoes</h5>
+            <div>
+              <%= link_to shoes_knowledge_path do %>
+                <i class="fas fa-pen-nib">Knowledge</i>
+              <% end %>
+              <%= link_to shoes_recommend_path do %>
+                <i class="fas fa-child">Recommended</i>
+              <% end %>
             </div>
           </div>
-        </footer>
-
-          <span id="back">
-            <a href="#">
-              <img tag="/assets/images/img/arrow.png">
-            </a>
-          </span>
-      </body>
-</html>
+          <div class="row text-center">
+            <h5>©︎2020 LeatherShoes</h5>
+          </div>
+        </div>
+      </footer>
+      <span id="back">
+        <a href="#">
+          <img tag="/assets/images/img/arrow.png">
+        </a>
+      </span>
+    </body>
+  </html>

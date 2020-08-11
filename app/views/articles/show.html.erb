@@ -1,33 +1,44 @@
 <p id="notice"><%= notice %></p>
-  <div class="row">
-     <div class="col-xs-12">
-       <h2>動画　詳細</h2>
-
-         <table class="table table-hover table-inverse">
-          <tr>
-            <th><%= link_to user_path(@user.id) do %>
-              <%= attachment_image_tag @article.user, :profile_image, :fill, 30, 30, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "img/no_image.jpg" %><br><%= @user.name %><% end %>
-            </th>
-            <th></th>
-            <th></th>
-            <th align="left"><%= @article.title %></th>
-            <th></th>
-            <th align="left"><%= @article.body %></th>
-            <th></th>
-            <th align="left"><%= link_to @article.video_url.to_s do %>
-              <span class="glyphicon glyphicon-home" aria-hidden="true">
-              </span>
-              <%#= image_tag(@article.video_url(:screenshot).to_s, id: "video", :alt => "screenshot") %>
-            <% end %>
-            </th>
-            <th><% if @user.id == current_user.id %>
-                <%= link_to "Edit", edit_article_path(@article.id) %><% end %>
-            </th>
-                <!--「いいね」に、自分（ログインしているユーザ）が含まれているかをfavorited_by?メソッドで判定-->
-            <th><% if @user.id == current_user.id %>
-                <%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %><% end %>
-            </th>
-          </tr>
-        </table>
-     </div>
-  </div>
+<div class="row">
+   <div class="col-xs-12">
+     <h2 class="text-center">動画</h2>
+       <table class="table table-hover table-inverse">
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th>タイトル</th>
+          <th></th>
+          <th>説明文</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <th><%= link_to user_path(@user.id) do %>
+            <%= attachment_image_tag @article.user, :profile_image, :fill, 30, 30, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "img/no_image.jpg" %><br><%= @user.name %><% end %>
+          </th>
+          <th></th>
+          <th></th>
+          <th align="left"><%= @article.title %></th>
+          <th></th>
+          <th align="left"><%= @article.body %></th>
+          <th></th>
+          <th align="left"><%= link_to @article.video_url.to_s do %>
+            <span class="glyphicon glyphicon-home" aria-hidden="true">
+              投稿動画
+            </span>
+            <%#= image_tag(@article.video_url(:screenshot).to_s, id: "video", :alt => "screenshot") %>
+          <% end %>
+          </th>
+          <th><% if @user.id == current_user.id %>
+              <%= link_to "Edit", edit_article_path(@article.id) %><% end %>
+          </th>
+          <th><% if @user.id == current_user.id %>
+              <%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %><% end %>
+          </th>
+        </tr>
+      </table>
+   </div>
+</div>

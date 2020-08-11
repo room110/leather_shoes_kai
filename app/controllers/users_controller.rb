@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 def index
   @shoe = Shoe.new
-	@users = User.all
+	@users = User.page(params[:page]).reverse_order
 end
 
 def show

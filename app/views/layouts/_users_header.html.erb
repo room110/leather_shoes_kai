@@ -1,37 +1,28 @@
 <div class="container">
-       <nav class="nav navbar-nav navbar-left">
-         <%#= image_tag "img/test1.jpg", size: '250x50', alt: "LeatherShoes" %>
-       </nav>
-
-       <% if user_signed_in? %>
-       <nav class="nav navbar-nav navbar-brand-center">
-        <span style= "color: white;">ようこそ、<%= current_user.name %>さん！</span>
-       </nav>
-       <nav>
-        <ul class="nav navbar-nav navbar-right">
-
-          <div id="sp-menu">
-        <ul>
+  <% if user_signed_in? %>
+    <span style= "color: white;">ようこそ、<%= current_user.name %>さん！</span>
+    <div id="sp-menu">
+      <ul>
         <li><h2>Search</h2></li>
         <li>
-              <%= form_tag(search_path, method: :get) do %>
-                <%= text_field_tag (:word) %>
-                <%= select_tag 'range' ,options_for_select([
-                  ['---選択してください---', ''],
-                  ['User', '1'],
-                  ['Shoe', '2'],
-                  ['Brand', '3'],
-                  ['Size', '4'],
-                  ['Type', '5'],
-                  ['Leather', '6'],
-                  ['Article', '7']]) %>
-                <%= select_tag 'search1', options_for_select([
-                  ["前方一致","forward_match"],
-                  ["後方一致","backward_match"],
-                  ["完全一致","perfect_match"],
-                  ["部分一致","partial_match"]]) %>
-                <%= submit_tag "検索",class:'btn btn-primary' %>
-              <% end %>
+          <%= form_tag(search_path, method: :get) do %>
+            <%= text_field_tag (:word) %>
+            <%= select_tag 'range' ,options_for_select([
+              ['---選択してください---', ''],
+              ['User', '1'],
+              ['Shoe', '2'],
+              ['Brand', '3'],
+              ['Size', '4'],
+              ['Type', '5'],
+              ['Leather', '6'],
+              ['Article', '7']]) %>
+            <%= select_tag 'search1', options_for_select([
+              ["前方一致","forward_match"],
+              ["後方一致","backward_match"],
+              ["完全一致","perfect_match"],
+              ["部分一致","partial_match"]]) %>
+            <%= submit_tag "検索",class:'btn btn-primary' %>
+          <% end %>
         </li>
         <li><h2>MENU</h2></li>
         <li><%= link_to "Home", user_path(current_user.id) %></li>
@@ -47,7 +38,6 @@
             <%= link_to "お問い合わせ", inquirys_new_path %></li>
       </ul>
     </div>
- 
     <div id="hm-icon">
       <a class="menu-trigger" href="#">
         <span></span>
@@ -55,37 +45,31 @@
         <span></span>
       </a>
     </div>
-
-      </nav>
-    <% else %>
-      <nav class="nav navbar-nav navbar-brand-center">
-        <span style= "color: white;">ようこそ、ゲストさん！</span>
-      </nav>
-
-        <div id="sp-menu">
-      
-        <ul>
-          <li><h2>Search</h2></li>
+  <% else %>
+    <span style= "color: white;">ようこそ、ゲストさん！</span>
+    <div id="sp-menu">
+      <ul>
+        <li><h2>Search</h2></li>
         <li>
-              <%= form_tag(search_path, method: :get) do %>
-                <%= text_field_tag (:word) %>
-                <%= select_tag 'range' ,options_for_select([
-                  ['---選択してください---', ''],
-                  ['User', '1'],
-                  ['Shoe', '2'],
-                  ['Brand', '3'],
-                  ['Size', '4'],
-                  ['Type', '5'],
-                  ['Leather', '6'],
-                  ['Article', '7']]) %>
-                <%= select_tag 'search1', options_for_select([
-                  ["前方一致","forward_match"],
-                  ["後方一致","backward_match"],
-                  ["完全一致","perfect_match"],
-                  ["部分一致","partial_match"]]) %>
-                <%= submit_tag "検索",class:'btn btn-primary' %>
-              <% end %>
-          </li>
+          <%= form_tag(search_path, method: :get) do %>
+            <%= text_field_tag (:word) %>
+            <%= select_tag 'range' ,options_for_select([
+              ['---選択してください---', ''],
+              ['User', '1'],
+              ['Shoe', '2'],
+              ['Brand', '3'],
+              ['Size', '4'],
+              ['Type', '5'],
+              ['Leather', '6'],
+              ['Article', '7']]) %>
+            <%= select_tag 'search1', options_for_select([
+              ["前方一致","forward_match"],
+              ["後方一致","backward_match"],
+              ["完全一致","perfect_match"],
+              ["部分一致","partial_match"]]) %>
+            <%= submit_tag "検索",class:'btn btn-primary' %>
+          <% end %>
+        </li>
         <li><h2>MENU</h2></li>
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "About", about_path %></li>
@@ -95,13 +79,13 @@
         <li><%= link_to "おすすめブランド", shoes_recommend_path %></li>
         <li><%= link_to "お問い合わせ", inquirys_new_path %></li>
       </ul>
-     </div>
-     <div id="hm-icon">
+    </div>
+    <div id="hm-icon">
       <a class="menu-trigger" href="#">
         <span></span>
         <span></span>
         <span></span>
       </a>
     </div>
-     <%end%>
-   </div>
+  <%end%>
+</div>
