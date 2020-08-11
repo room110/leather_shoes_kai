@@ -75,3 +75,6 @@ gem "omniauth-rails_csrf_protection"
 gem 'dotenv-rails'
 gem 'carrierwave'
 gem 'streamio-ffmpeg'
+group :production do
+  gem 'mysql2'
+end
