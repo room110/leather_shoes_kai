@@ -1,7 +1,7 @@
 <div class="col-xs-1"></div>
 
   <div class="col-xs-4">
-      <h2 align="text-center">User Info</h2>
+      <h2 align="text-center">プロフィール</h2>
         <%= attachment_image_tag user, :profile_image, :fill, 125, 125, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "img/no_image.jpg" %>
       <table class="table">
         <tbody>
@@ -10,11 +10,7 @@
             <th><%= user.name %></th>
           </tr>
           <tr>
-            <th>Mail</th>
-            <th><%= user.email %></th>
-          </tr>
-          <tr>
-            <th>Bio</th>
+            <th>Introduction</th>
             <th><%= user.introduction%></th>
           </tr>
           <tr>

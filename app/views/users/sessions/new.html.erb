@@ -6,12 +6,8 @@
 
         <table class="table">
           <tr>
-            <th>
-              ユーザーネーム
-            </th>
-            <td>
-              <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-            </td>
+            <th>メールアドレス</th>
+            <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
           </tr>
           <tr>
             <th>

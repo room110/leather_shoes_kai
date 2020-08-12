@@ -5,8 +5,8 @@
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <table class="table">
           <tr>
-            <th>名前</th>
-            <td><%= f.text_field :name, autofocus: true, autocomplete: "name" %></td>
+            <th>メールアドレス</th>
+            <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
           </tr>
           <tr>
             <th>パスワード</th>
