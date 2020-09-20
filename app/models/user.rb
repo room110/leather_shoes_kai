@@ -14,6 +14,8 @@ class User < ApplicationRecord
   has_many :shoe_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :sns_credential, dependent: :destroy
+  has_many :messages, dependent: :destroy
+  has_many :entries, dependent: :destroy
 
   has_many :user_relationships
   #relationshipsテーブルのfollow_idを参考にして、followingsモデルにアクセス。

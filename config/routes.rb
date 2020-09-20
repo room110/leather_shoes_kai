@@ -32,6 +32,9 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :messages, :only => [:create]
+  resources :rooms, :only => [:create, :show, :index]
+
 
   resources :users
   get 'users/:id/new' => 'users#new', as: 'new_user_post'

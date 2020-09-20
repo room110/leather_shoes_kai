@@ -26,7 +26,7 @@ class ShoesController < ApplicationController
 	def index
 	  #kaminariページネーション記述
     @shoes = Shoe.page(params[:page]).reverse_order
-		#@shoe = Shoe.find(params[:id])
+		@shoe = Shoe.all
 	end
 
 	def edit
